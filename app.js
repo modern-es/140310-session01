@@ -14,9 +14,15 @@ const expenseTableBody = document.querySelector("#expenseTableBody");
 
 
 
-//event handling
-formExpense.addEventListener("submit", function (e) {
+// //event handling
+// formExpense.addEventListener("submit", function (e) {
+//     e.preventDefault();
+
+//     //
+// });
+
+formExpense.addEventListener("submit", (e) => {
     e.preventDefault();
 
-    console.log(e);
-})
+    //
+});

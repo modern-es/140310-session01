@@ -9,24 +9,29 @@
 </head>
 
 <body>
+    <script>
+        //JS inline
+    </script>
     <!-- emmet -->
     <!-- live Server -->
 
 
     <main class="container">
         <h1>مدیریت هزینه ها</h1>
-        <form>
+        <form id="formExpense">
             <label for="description">شرح</label>
             <input type="text" name="description" id="description">
 
             <label for="amount">مبلغ</label>
-            <input type="text" name="amount" id="amount">
+            <input type="number" name="amount" id="amount">
 
             <button type="submit">افزودن</button>
         </form>
 
 
-        <h2>جمع کل</h2>
+        <h2>جمع کل
+            <span id="totalAmount">0</span> تومان
+        </h2>
         <br>
 
         <h2>لیست هزینه ها</h2>
@@ -38,11 +43,12 @@
                     <th>عملیات</th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody id="expenseTableBody">
                 <!--  -->
             </tbody>
         </table>
     </main>
+    <script src="app.js"></script>
 </body>
 
 </html>

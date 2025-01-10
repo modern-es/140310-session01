@@ -42,8 +42,9 @@ formExpense.addEventListener("submit", (e) => {
     // expnese.push({description:description, amount:amount});
     expnese.push({ description, amount });
 
-    descriptionInput.value = "";
-    amountInput.value = "";
+    // descriptionInput.value = "";    
+    // amountInput.value = "";
+    formExpense.reset();
     render();
 });
 
@@ -51,9 +52,8 @@ formExpense.addEventListener("submit", (e) => {
 const render = () => {
     let totalAmount = 0;
     for (let i = 0; i < expnese.length; i++) {
-        console.log(expnese[i])
         totalAmount += expnese[i].amount;
     }
 
-    totalAmountElem.textContent = totalAmount;
+    totalAmountElem.textContent = totalAmount.toLocaleString("fa-IR");
 }

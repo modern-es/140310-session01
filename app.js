@@ -51,9 +51,24 @@ formExpense.addEventListener("submit", (e) => {
 
 const render = () => {
     let totalAmount = 0;
+    let body = '';
     for (let i = 0; i < expnese.length; i++) {
         totalAmount += expnese[i].amount;
+
+        // body += "<tr><td>"+ expnese[i].description + "</td>" + ...;
+
+        //string template / interpolation
+        //` = backtick, ~ = tilda
+        // win + .
+        body += `<tr>
+            <td>${expnese[i].description}</td>
+            <td>${expnese[i].amount.toLocaleString("fa-IR")}</td>
+            <td> <button>❌</button> </td>
+        </tr>
+        `;
+
     }
 
     totalAmountElem.textContent = totalAmount.toLocaleString("fa-IR");
+    expenseTableBody.innerHTML = body;
 }

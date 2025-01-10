@@ -24,5 +24,19 @@ const expenseTableBody = document.querySelector("#expenseTableBody");
 formExpense.addEventListener("submit", (e) => {
     e.preventDefault();
 
-    //
+    const description = descriptionInput.value.trim();
+    const amount = +amountInput.value.trim();
+
+    // parseInt("10") // ->10
+    // parseInt("10xyz") // -> 10
+    // parseInt("10xyz2000") // -> 10
+    // 1+2
+    // +2
+    // -2
+
+
+    //snippet, clg
+    console.log(description, amount)
+
+
 });

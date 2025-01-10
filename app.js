@@ -12,8 +12,7 @@ const amountInput = document.querySelector("#amount");
 const totalAmountElem = document.querySelector("#totalAmount");
 const expenseTableBody = document.querySelector("#expenseTableBody");
 
-const expnese = [];
-//TODO let 
+let expnese = [];
 
 // //event handling
 // formExpense.addEventListener("submit", function (e) {
@@ -52,8 +51,8 @@ formExpense.addEventListener("submit", (e) => {
 const render = () => {
     let totalAmount = 0;
     let body = '';
-    for (let i = 0; i < expnese.length; i++) {
-        totalAmount += expnese[i].amount;
+    for (let index = 0; index < expnese.length; index++) {
+        totalAmount += expnese[index].amount;
 
         // body += "<tr><td>"+ expnese[i].description + "</td>" + ...;
 
@@ -61,9 +60,9 @@ const render = () => {
         //` = backtick, ~ = tilda
         // win + .
         body += `<tr>
-            <td>${expnese[i].description}</td>
-            <td>${expnese[i].amount.toLocaleString("fa-IR")}</td>
-            <td> <button>❌</button> </td>
+            <td>${expnese[index].description}</td>
+            <td>${expnese[index].amount.toLocaleString("fa-IR")}</td>
+            <td> <button onclick="removeExpense(${index})">❌</button> </td>
         </tr>
         `;
 
@@ -71,4 +70,9 @@ const render = () => {
 
     totalAmountElem.textContent = totalAmount.toLocaleString("fa-IR");
     expenseTableBody.innerHTML = body;
+}
+
+const removeExpense = (index) => {
+    expnese = expnese.filter((_, i) => i !== index);
+    render();
 }
